@@ -1,7 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <script src="main.js"></script>
+    <script>
+      function number(num) {
+        if (0 > num) {
+          throw "error";
+        } else if (100 < num) {
+          throw new error("error");
+        }
+        return num;
+      }
+
+      try {
+        console.log(number(100));
+      } catch (err) {
+        console.log(err);
+      }
+    </script>
   </head>
   <body></body>
 </html>
