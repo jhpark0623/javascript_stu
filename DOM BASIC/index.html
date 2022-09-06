@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>잠만보</title>
+
+    <style>
+      div {
+        background-color: red;
+        color: pink;
+        display: inline;
+        font-size: xx-large;
+      }
+      span {
+        background-color: blue;
+        color: magenta;
+        display: block;
+      }
+      p {
+        /* display: inline; */
+      }
+      img {
+        display: block;
+      }
+      .styled {
+        border: 0;
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(
+          to top left,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2) 30%,
+          rgba(0, 0, 0, 0)
+        );
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+          inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+      }
+
+      .styled:hover {
+        background-color: black;
+      }
+
+      .styled:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+          inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+      }
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div>div태그</div>
+    <div>div태그</div>
+    <div>div태그</div>
+    <div>div태그</div>
+    <div>div태그</div>
+
+    <span>span태그</span>
+    <span>span태그</span>
+    <span>span태그</span>
+    <span>span태그</span>
+    <span>span태그</span> -->
+
+    <!-- <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quam
+      magni aperiam asperiores, iusto dolore laboriosam ex, esse tempore ut
+      facilis possimus, quod cum inventore perspiciatis? Illum amet rerum modi?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quam
+      magni aperiam asperiores, iusto dolore laboriosam ex, esse tempore ut
+      facilis possimus, quod cum inventore perspiciatis? Illum amet rerum modi?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quam
+      magni aperiam asperiores, iusto dolore laboriosam ex, esse tempore ut
+      facilis possimus, quod cum inventore perspiciatis? Illum amet rerum modi?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quam
+      magni aperiam asperiores, iusto dolore laboriosam ex, esse tempore ut
+      facilis possimus, quod cum inventore perspiciatis? Illum amet rerum modi?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quam
+      magni aperiam asperiores, iusto dolore laboriosam ex, esse tempore ut
+      facilis possimus, quod cum inventore perspiciatis? Illum amet rerum modi?
+    </p>
+
+    <h1>제목 태그</h1>
+    <h2>제목 태그</h2>
+    <h3>제목 태그</h3>
+    <h4>제목 태그</h4>
+    <h5>제목 태그</h5>
+    <h6>제목 태그</h6> -->
+
+    <!-- <ul>
+      <li>안녕</li>
+      <li>안녕</li>
+      <li>안녕</li>
+      <ul>
+        <li>안녕</li>
+        <ul>
+          <li>안녕</li>
+          <li>안녕</li>
+          <li>안녕</li>
+        </ul>
+        <li>안녕</li>
+        <ul>
+          <li>안녕</li>
+          <li>안녕</li>
+          <li>안녕</li>
+        </ul>
+        <li>안녕</li>
+        <ul>
+          <li>안녕</li>
+          <li>안녕</li>
+          <li>안녕</li>
+        </ul>
+      </ul>
+    </ul>
+    <ol type="i" start="3" reversed>
+      <li>안녕</li>
+      <li>안녕</li>
+      <li>안녕</li>
+      <ol type="I">
+        <li>안녕</li>
+        <li>안녕</li>
+        <li>안녕</li>
+        <ol type="a">
+          <li>안녕</li>
+          <li>안녕</li>
+          <li>안녕</li>
+          <ol type="A">
+            <li>안녕</li>
+            <li>안녕</li>
+            <li>안녕</li>
+            <ol>
+              <li>안녕</li>
+              <li>안녕</li>
+              <li>안녕</li>
+            </ol>
+          </ol>
+        </ol>
+      </ol>
+    </ol> -->
+
+    <!-- <img src="./img/이미지.png" art="맛없는 잠만보 사진" width="50%" /> -->
+
+    <!-- <a href="https://www.naver.com" target="_blank"
+      ><img src="./img/네이버.jpg" art="네이버" width="30%"
+    /></a>
+    <a href="https://www.google.co.kr/" target="_blank"
+      ><img src="./img/google.png" art="google" width="30%"
+    /></a>
+
+    <button class="favorite styled" type="button">로그인</button>
+    <button class="styled">회원가입</button>
+
+    <input type="text" minlength="4" maxlength="8" placeholder="아이디" />
+    <input type="date" value="2020-09-06" min="1000-01-01" max="2999-12-31" />
+    <input type="button" value="로그인" />
+    <input type="checkbox" />체크 <input type="checkbox" />체크
+    <input type="checkbox" />체크 <input type="checkbox" />체크
+
+    <input type="email" />
+    <input type="image" src="./img/google.png" />
+    <input type="number" />
+    <input type="password" />
+
+    <textarea name="" id="" cols="30" rows="10"></textarea> -->
+
+    <nav>안녕</nav>
+    <div>안녕</div>
+    <nav>
+      <ul>
+        <li><a href="./index.html">홈</a></li>
+        <li><a href="./profile.html">저자 소개</a></li>
+      </ul>
+    </nav>
+
+    <h1>index.html 파일</h1>
+  </body>
+</html>
