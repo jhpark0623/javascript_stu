@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <script>
+      console.log("Hello World");
+
+      /*document.addEventListener("DOMContentLoaded", () => {
+        console.log("Loading...");
+        const sunmoon = document.querySelector(".sun");
+        sunmoon.textContent = "선문대학교";
+        console.log(sunmoon.textContent);
+
+        console.log(sunmoon.className);
+        //sunmoon.className = "1san";
+        console.log(sunmoon.className);
+
+        console.log(sunmoon.classList);
+      });*/
+
+      document.addEventListener("DOMContentLoaded", () => {
+        /*const coverList = document.querySelectorAll(".cover"); //고양이만들기
+        console.log(coverList);
+
+        coverList.forEach((item, index) => {
+          const rand = Math.trunc(Math.random() * 10);
+          const url = `http://placekitten.com/200/30${rand}`;
+          item.setAttribute("src", url);
+        });
+
+        // coverList[index].setAttribute("src", url);
+
+        for (let i = 0; i < coverList.length; i++) {
+          let url =
+            "https://api.lorem.space/image/drink?w=" +
+            (i + 1) * 100 +
+            "&h=" +
+            (i + 1) * 100;
+          coverList[i].setAttribute("src", url);
+        }*/
+        /*const divs = document.querySelectorAll("#container .sun"); // script에서 style컨트롤
+        divs.forEach((sun, index) => {
+          console.log(sun);
+          sun.style.backgroundColor = `rgba(${index * 100},${index * 100},${
+            index * 100
+          },0.5)`;
+          sun.setAttribute("bakcgroundColor", "blue");
+        });*/
+        /*const div = document.createElement("h1");
+        const div2 = div.cloneNode(div);
+        const div3 = document.createElement("h1");
+        console.log(div);
+
+        div.textContent = "h1태그";
+        document.body.appendChild(div);
+
+        div2.textContent = "들어가라";
+        const two = document.querySelector("#two");
+
+        const h1 = two.appendChild(div2);
+
+        h1.appendChild(div3);*/
+        /*const deleteEle = document.querySelectorAll(".two");
+        console.log(deleteEle);
+
+        deleteEle.forEach((tagId) => {
+          tagId.parentNode.removeChild(tagId);
+        });
+
+        console.log(parent);*/
+        /*const one = document.querySelector("#one");
+        const two = document.querySelector("#two");
+        const three = document.querySelector("#three");
+        const debug = document.querySelector("#debug");
+
+        oneListener = () => {
+          debug.textContent = "원 클릭 되었습니다.";
+        };
+        twoListener = () => {
+          debug.textContent = "투 클릭 되었습니다.";
+        };
+        threeListener = () => {
+          debug.textContent = "쓰리 클릭 되었습니다.";
+        };
+
+        one.addEventListener("click", oneListener);
+
+        two.addEventListener("click", twoListener);
+
+        three.addEventListener("click", threeListener);
+
+        one.removeEventListener("click", twoListener);
+        two.removeEventListener("click", threeListener);
+        three.removeEventListener("click", oneListener);*/
+
+        const click = document.querySelector(".click");
+        const count = document.querySelector(".count");
+        const btnConnect = document.querySelector(".connect");
+        const btnDisconnect = document.querySelector(".disconnect");
+        const btnreset = document.querySelector(".reset");
+        const msg = document.querySelector(".state");
+
+        let clickCount = 0;
+
+        const fnclick = () => {
+          count.textContent = ++clickCount;
+        };
+
+        btnConnect.addEventListener("click", () => {
+          msg.textContent = "연결됨";
+          click.addEventListener("click", fnclick);
+        });
+
+        btnDisconnect.addEventListener("click", () => {
+          msg.textContent = "해제됨";
+          click.removeEventListener("click", fnclick);
+        });
+
+        btnreset.addEventListener("click", () => {
+          count.textContent = "0";
+          clickCount = 0;
+        });
+      });
+    </script>
+    <style>
+      #sun {
+        color: red;
+      }
+
+      #moon {
+        color: maroon;
+      }
+
+      .sun {
+        color: slateblue;
+      }
+
+      .moon {
+        color: hotpink;
+      }
+
+      /* #container {
+        background-color: aqua;
+      } */
+
+      #container span {
+        font-weight: bold;
+      }
+
+      #container #moon {
+        color: blue;
+      }
+
+      #container .sun {
+        color: green;
+        margin: 10px;
+      }
+
+      #container .moon {
+        border: 1px solid #000000;
+      }
+
+      .divEle {
+        cursor: default;
+      }
+
+      .unselectable {
+        user-select: none;
+      }
+
+      .click {
+        border: 1px solid gray;
+        border-radius: 3px;
+        display: inline;
+        background-color: #efefef;
+        font-size: 13px;
+        padding: 2px 6px;
+        cursor: default;
+      }
+
+      .click:hover {
+        background-color: #e0e0e0;
+        border: 1px solid rgb(125, 125, 125);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="sunmoon sunmoo sunmo sunm sun su s">
+      script 만든사람은 미친게 분명해
+    </div>
+
+    <div id="container">
+      <span id="sun" name="first">고</span>
+      <span id="moon" name="first">양</span>
+      <span class="sun">이</span>
+      <span class="sun">귀</span>
+      <span class="sun">여</span>
+      <span>워</span>
+    </div>
+
+    <img src="" alt="" class="cover" />
+    <img src="" alt="" class="cover" />
+    <img src="" alt="" class="cover" />
+    <img src="" alt="" class="cover" />
+    <img src="" alt="" class="cover" /> -->
+    <!-- <div class="container">
+      <div id="one" class="divEle unselectable">첫번째</div>
+      <div id="two" class="divEle unselectable">두번째</div>
+      <div id="three" class="divEle unselectable">세번째</div>
+      <div id="debug" class="unselectable"></div>
+    </div> -->
+
+    <div id="container">
+      <div class="click unselectable">날 눌러봐</div>
+      <div>클릭횟수 : <span class="count">0</span></div>
+      <button class="connect">이벤트 연결</button>
+      <button class="disconnect">이벤트 삭제</button>
+      <button class="reset">카운트 초기화</button>
+      <p>이벤트 연결 상태 : <span class="state">해제됨</span></p>
+    </div>
+
+    <script>
+      /*const result = document.getElementById("moon"); // 아이디를 지정해서 가져오는 방법
+      console.log(result.textContent);
+
+      const resultClassSun = document.getElementsByClassName("sun");
+      console.log(resultClassSun[0].textContent);
+      console.log(resultClassSun[1].textContent);
+      console.log(resultClassSun[2].textContent);
+      console.log(resultClassSun.length);
+      console.log(resultClassSun);
+
+      const resultTagName = document.getElementsByTagName("span");
+      console.log(resultTagName[0].textContent);
+
+      const resultName = document.getElementsByName("first");
+      console.log(resultName[1].textContent);
+
+      const resultQS = document.querySelectorAll(".sun, #sun, #container");
+      console.log(resultQS);*/
+
+      /*const div = document.querySelector(".sunmoon");
+      console.log(div);
+
+      //function listener() {}
+      let count = 0;
+      const listener = () => {
+        console.log(`${++count}번째 클릭 입니다.`);
+      };
+
+      let dbcount = 0;
+      const dblistener = () => {
+        console.log(`${++dbcount}번째 더블클릭 입니다.`);
+      };
+
+      document.addEventListener("click", listener); // 마우스 클릭
+      document.addEventListener("dblclick", dblistener); // 마우스 더블클릭
+      document.addEventListener("mousedown", () => {
+        // 마우스 누를때
+        console.log("push");
+      });
+
+      document.addEventListener("mouseup", () => {
+        // 마우스 땔때
+        console.log("pop");
+      });
+
+      container.addEventListener("click", () => {
+        console.log("sun");
+      });*/
+    </script>
+  </body>
+</html>
