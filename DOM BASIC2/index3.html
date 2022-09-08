@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /*console.log("문서가 로딩됨");
+
+        window.onload = () => {
+          console.log("로딩됨");
+        };
+
+        const container = document.querySelector("#container");
+        console.log(container);
+        container.style.color = "red";
+
+        container.onclick = () => {
+          // 클릭 이벤트
+          console.log("click");
+        };
+
+        container.addEventListener("click", () => {
+          console.log("click");
+        });*/
+
+        const textarea = document.querySelector("textarea");
+        const h1 = document.querySelector("h1");
+
+        let timer = null;
+
+        textarea.addEventListener("focus", () => {
+          console.log(timer);
+
+          //if (timer == null) {
+          timer = setInterval(() => {
+            const length = textarea.value.length;
+            h1.textContent = `글자 수 : ${length}`;
+          }, 10);
+          console.log(timer);
+          //}
+        });
+
+        textarea.addEventListener("blur", () => {
+          clearInterval(timer);
+          console.log(timer);
+          h1.textContent = textarea.value;
+        });
+      });
+
+      // window.onload = () => {
+      //   console.log("로딩이 되었는가");
+      //   console.log(document);
+      // };
+
+      // document.onreadystatechange = (event) => {
+      //   const state = document.readyState;
+      //   console.log(state);
+      // };
+
+      // console.log(document.readyState);
+
+      /*setInterval(() => {
+        document.readyState = "loading!";
+        console.log(document.readyState);
+      }, 1);*/
+
+      /*const onclickTestFn = (event) => {
+        console.log(event);
+      };*/
+    </script>
+  </head>
+  <body>
+    <h1></h1>
+    <textarea></textarea>
+  </body>
+</html>

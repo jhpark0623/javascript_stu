@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let email = document.querySelector(".email").value;
+        const button = document.querySelector("#submit");
+        const errMsg = document.querySelector(".error");
+        button.addEventListener("click", () => {
+          // const split1 = email.split("@");
+          // console.log(split1.length);
+          // if (2 === split1.length) {
+          //   split2 = split1[1].split(".");
+          //   console.log(split2);
+          //   if (1 === split2.length || split2[1] === "") {
+          //     errMsg.textContent = "정확한 email형식으로 입력해주세요.";
+          //   } else {
+          //     errMsg.textContent = "OK";
+          //   }
+          // } else {
+          //   errMsg.textContent = "정확한 email형식으로 입력해주세요.";
+          // }
+
+          index1 = email.indexOf("@");
+          if (-1 !== index1) {
+            index2 = email.indexOf(".");
+            if (-1 !== index2 && index2 !== email.length - 1) {
+              errMsg.textContent = "OK";
+            } else {
+              errMsg.textContent = "정확한 email형식으로 입력해주세요.";
+            }
+          } else {
+            errMsg.textContent = "정확한 email형식으로 입력해주세요.";
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="email" placeholder="이메일을 입력하세요" />
+      <button id="submit">로그인</button>
+    </div>
+    <div>
+      <span class="error">오류 메시지</span>
+    </div>
+  </body>
+</html>
