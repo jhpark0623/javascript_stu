@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // multiple select 태그 활용
+      /*document.addEventListener("DOMContentLoaded", () => { 
+        const select = document.querySelector("select");
+        const p = document.querySelector("p");
+
+        select.addEventListener("change", () => {
+          const options = event.currentTarget.options;
+          const list = [];
+
+          for (const option of options) {
+            if (option.selected) list.push(option.textContent);
+          }
+
+          p.textContent = `선택 : ${list.join(", ")}`;
+        });
+      });*/
+
+      //단위 변환 프로그램
+      /*document.addEventListener("DOMContentLoaded", () => {
+        let 현재값;
+        let 변환상수;
+
+        const select = document.querySelector("select");
+        const input = document.querySelector("input");
+        const span = document.querySelector("span");
+
+        const calculate = () => {
+          span.textContent = (현재값 * 변환상수).toFixed(2);
+        };
+
+        select.addEventListener("change", () => {
+          const options = event.currentTarget.options;
+          const index = event.currentTarget.options.selectedIndex;
+          변환상수 = Number(options[index].value);
+          calculate();
+        });
+
+        input.addEventListener("keydown", () => {
+          현재값 = Number(event.currentTarget.value);
+          console.log(event.currentTarget.value);
+          calculate();
+        });
+      });*/
+
+      //체크박스 활용
+      /*document.addEventListener("DOMContentLoaded", () => {
+        let [timer, timerID] = [0, 0];
+        const h1 = document.querySelector("h1");
+        const checkbox = document.querySelector("input");
+
+        checkbox.addEventListener("change", (event) => {
+          if (event.currentTarget.checked) {
+            timerID = setInterval(() => {
+              timer++;
+              h1.textContent = `${timer}초`;
+            }, 1000);
+          } else clearInterval(timerID);
+        });
+      });*/
+
+      // 라디오 버튼 활용
+      /*document.addEventListener("DOMContentLoaded", () => {
+        const output = document.querySelector("#output");
+        const radios = document.querySelectorAll("[name = pet]");
+
+        radios.forEach((radio) => {
+          radio.addEventListener("change", () => {
+            const current = event.currentTarget;
+            if (current.checked)
+              output.textContent = `좋아하는 애완동물은 ${current.value}입니다.`;
+          });
+        });
+      });*/
+
+      //체크시에 링크 활성화
+      /*document.addEventListener("DOMContentLoaded", () => {
+        let status = false;
+
+        const checkbox = document.querySelector("input");
+        checkbox.addEventListener("change", () => {
+          status = event.currentTarget.checked;
+        });
+
+        const link = document.querySelector("a");
+        link.addEventListener("click", () => {
+          if (!status) {
+            event.preventDefault();
+          }
+        });
+      });*/
+    </script>
+  </head>
+  <body>
+    <!-- multiple select 태그 활용
+    <select multiple>
+      <option>떡볶이</option>
+      <option>순대</option>
+      <option>오뎅</option>
+      <option>튀김</option>
+    </select>
+    <p></p> -->
+
+    <!-- 단위 변환 프로그램
+    <input type="text" />cm =
+    <span></span>
+    <select>
+      <option value="10">mm</option>
+      <option value="0.01">m</option>
+      <option value="0.393701">inch</option>
+    </select> -->
+
+    <!-- 체크박스 활용
+    <input type="checkbox" />
+    <span>타이머 활성화</span>
+    <h1></h1> -->
+
+    <!-- 라디오버튼 활용
+    <h3># 좋아하는 애완동물을 선택해주세요</h3>
+    <input type="radio" name="pet" value="강아지" />
+    <span>강아지</span>
+    <input type="radio" name="pet" value="고양이" />
+    <span>고양이</span>
+    <input type="radio" name="pet" value="햄스터" />
+    <span>햄스터</span>
+    <input type="radio" name="pet" value="기타" />
+    <span>기타</span>
+    <hr />
+    <h3 id="output"></h3> -->
+
+    <!-- 체크시에 링크 활성화
+    <input type="checkbox" />
+    <span>링크 활성화</span>
+    <br />
+    <a href="https://lms.sunmoon.ac.kr">선문대학교 e-class</a> -->
+  </body>
+</html>

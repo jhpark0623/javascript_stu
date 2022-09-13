@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const eleTodo = document.querySelector("#todo"); // 할 일 입력창
+        const addButton = document.querySelector("#add-button"); // 입력 버튼
+        const list = document.querySelector("#todo-list"); // 입력된 할 일을 추가할 컨테이너
+
+        const temp = localStorage.getItem("todoArr");
+        let todoArr = temp ? JSON.parse(temp) : [];
+
+        function saveTodo() {
+          localStorage.setItem("todoArr", JSON.stringify(todoArr));
+        }
+
+        function randerTodo() {
+          list.innerHTML = "";
+
+          todoArr.forEach((ele) => {
+            const div = document.createElement("div");
+            const checkbox = document.createElement("input");
+            const text = document.createElement("span");
+            const button = document.createElement("button");
+
+            // 체크박스 확인
+            checkbox.type = "checkbox";
+            checkbox.checked = ele.checked;
+            if (ele.checked === true)
+              text.style.textDecoration = "line-through";
+
+            checkbox.addEventListener("change", () => {
+              text.style.textDecoration = event.currentTarget.checked
+                ? "line-through"
+                : "";
+              ele.checked = event.currentTarget.checked ? true : false;
+              saveTodo();
+            });
+
+            text.textContent = ele.todoStr;
+
+            // 삭제버튼 클릭 이벤트
+            button.textContent = "❌";
+            button.setAttribute("data-ts", ele.ts);
+            button.addEventListener("click", (event) => {
+              const ts = event.currentTarget.dataset.ts;
+
+              todoArr = todoArr.filter((value) => {
+                if (value.ts + "" === ts + "") return false;
+                else return true;
+              });
+              saveTodo();
+              randerTodo();
+            });
+
+            div.appendChild(checkbox);
+            div.appendChild(text);
+            div.appendChild(button);
+            list.appendChild(div);
+          });
+        }
+
+        // 등록버튼 클릭 이벤트
+
+        const addFn = () => {
+          const value = eleTodo.value.trim();
+          if (!value) return;
+
+          todoArr.push({ todoStr: value, checked: false, ts: Date.now() });
+          console.log("등록됨");
+
+          eleTodo.value = "";
+          randerTodo();
+          saveTodo();
+        };
+
+        addButton.addEventListener("click", addFn());
+        eleTodo.addEventListener("keyup", () => {
+          if (event.keyCode === 13) addFn();
+        });
+
+        randerTodo();
+        saveTodo();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>TO DO LIST</h1>
+    <input id="todo" />
+    <button id="add-button">추가하기</button>
+    <div id="todo-list"></div>
+  </body>
+</html>
